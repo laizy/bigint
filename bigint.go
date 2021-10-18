@@ -99,6 +99,11 @@ func (self Int) Div(value interface{}) Int {
 	return Int{big.NewInt(0).Div(self.val(), val.val())}
 }
 
+func (self Int)Mod(value interface{}) Int {
+	val := New(value)
+	return Int { big.NewInt(0).Mod(self.val(), val.val())}
+}
+
 func (self Int) BigInt() *big.Int {
 	return self.val()
 }
