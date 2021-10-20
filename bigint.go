@@ -141,6 +141,10 @@ func (self Int) IsZero() bool {
 	return self.BigInt().Sign() == 0
 }
 
+func (self Int)IsNegative() bool {
+	return self.BigInt().Sign() < 0
+}
+
 func (self Int) LessThan(rhs Int) bool {
 	if self.BigInt().Cmp(rhs.BigInt()) == -1 {
 		return true
